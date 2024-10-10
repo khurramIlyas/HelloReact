@@ -1,0 +1,21 @@
+.layout {
+    background-color: rgb(143, 249, 247);
+    padding: 100px;
+}
+
+.navigation {
+    border: 2px solid blue;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.my-outlet {
+    background-color: plum;
+    padding: 30px;
+}
+
+footer {
+    background-color: yellowgreen;
+    padding: 20px;
+    font-size: 18px;
+}
