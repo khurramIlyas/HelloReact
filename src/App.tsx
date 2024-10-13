@@ -1,12 +1,12 @@
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom"
-import CountriesList from "./pages/countries/CountriesList"
-import Test from "./pages/test/Test"
-import Home from "./pages/home/Home"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Employees from "./pages/employees/Employees"
 import Layout from "./pages/layout/Layout"
 import Other from "./pages/other/Other"
 import Other2 from "./pages/other2/Other2"
 import Other3 from "./pages/other3/Other3"
 import Layout2 from "./pages/layout2/Layout2"
+import EmployeeDetails from "./pages/employee-details/EmployeeDetails"
+import Home from "./pages/home/Home"
 
 function App() {
 	return (
@@ -16,8 +16,8 @@ function App() {
 				{/* Layout Component Routing Starts here */}
 				<Route path="/" element={<Layout />}>
 					<Route index element={ <Home /> } />
-					<Route path="countries" element={ <CountriesList /> } />
-					<Route path="test" element={ <Test /> } />
+					<Route path="employees" element={ <Employees /> } />
+					<Route path="employee-details" element={ <EmployeeDetails /> } />
 				</Route>
 				{/* Layout Component Routing Ends here */}
 

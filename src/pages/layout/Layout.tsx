@@ -8,22 +8,16 @@ function Layout() {
                 <h2>My Navigation</h2>
                 <ul>
                     <li>
-                        <Link to="/">Home</Link>	
+                        <Link to="">Home</Link>	
                     </li>
-
                     <li>
-                        <Link to="/countries">Countries List</Link>	
-                    </li>
-
-                    <li>
-                        <Link to="/test">Test</Link>	
+                        <Link to="employees">Employees</Link>	
                     </li>
                 </ul>
             </div>
 
             {/* Container for all components */}
             <div className="my-outlet">
-                <h2>My Outlet</h2>
                 <Outlet />
             </div>
 
