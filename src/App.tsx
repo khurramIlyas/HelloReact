@@ -7,6 +7,7 @@ import Other3 from "./pages/other3/Other3"
 import Layout2 from "./pages/layout2/Layout2"
 import EmployeeDetails from "./pages/employee-details/EmployeeDetails"
 import Home from "./pages/home/Home"
+import AddEditEmployee from "./pages/add-edit-employee/add-edit-employee"
 
 function App() {
 	return (
@@ -18,6 +19,7 @@ function App() {
 					<Route index element={ <Home /> } />
 					<Route path="employees" element={ <Employees /> } />
 					<Route path="employee-details" element={ <EmployeeDetails /> } />
+					<Route path="add-employee" element={ <AddEditEmployee /> } />
 				</Route>
 				{/* Layout Component Routing Ends here */}
 
