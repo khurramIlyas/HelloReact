@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect,useState } from "react";
 import { IEmployee } from "../employees/Employees";
 import './EmployeeDetails.css';
 import { useSearchParams } from "react-router-dom";
@@ -7,15 +7,15 @@ function EmployeeDetails() {
     const [employee, setEmployee] = useState<IEmployee>();
     const [queryParams, setQueryParams] = useSearchParams();
 
-    useEffect(() => {   
+    useEffect(() => {
         const employeeId = Number(queryParams.get('id'));
 
         if (localStorage.getItem('employees')) {
             const e = localStorage.getItem('employees');
-            if(e) {
+            if (e) {
                 const employeesList = JSON.parse(e)
                 employeesList.map((employee: IEmployee) => {
-                    if(employee.id === employeeId) {
+                    if (employee.id === employeeId) {
                         setEmployee(employee);
                     }
                 })
@@ -23,27 +23,39 @@ function EmployeeDetails() {
         }
     }, []);
 
-    
+
 
     return (
         <div>
-            <div className="employe-detail">
-                <h3>Employee Detail of <span className="text-primary">{employee ? employee.name : 'Unknown'}</span></h3>
-
-                { // ts
-                    (employee !== undefined) ? ( //if condition true / THEN
-                        <ul>
-                            <li>ID: {employee.id}</li>
-                            <li>Name: {employee.name}</li>
-                            <li>Age: {employee.age}</li>
-                            <li>Phone #: {employee.phone}</li>
-                        </ul>
-                    ) : (// if condition false / ELSE
-                        <p>Employee data not available</p>
-                    )
-                } 
+            <div className="emp-list">
+                <div className="employees-List div">
+                    <div className="header-2 Employee-List">
+                        <h4>View Employees Information </h4>
+                    </div>
+                    { // ts
+                        (employee !== undefined) ? ( //if condition true / THEN
+                            <table className="table table-striped">
+                                <tbody>
+                                    <tr>
+                                        <td><label><b>ID</b></label></td>
+                                        <td>{employee.id}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><label><b>Email</b></label></td>
+                                        <td>{employee.employeeEmail}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><label><b>Age</b></label></td>
+                                        <td>{employee.employeeAge}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        ) : (// if condition false / ELSE
+                            <p>Employee data not available</p>
+                        )
+                    }
+                </div>
             </div>
-            
         </div>
     );
 }
