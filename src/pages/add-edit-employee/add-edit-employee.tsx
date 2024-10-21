@@ -1,6 +1,11 @@
+import { useContext } from "react"
 import { useForm } from "react-hook-form"
+import { globalContext } from "../../Contexts";
 
 function AddEditEmployee() {
+
+    const {user, setUser} = useContext(globalContext);
+
 	const {
 		register,
 		handleSubmit,
@@ -11,9 +16,16 @@ function AddEditEmployee() {
 		console.log("Data Received", data)
 	}
 
+    const changeName = (newName) => {
+		setUser({
+            name: newName
+        })
+    }
+
 	return (
 		<div>
-			<h1>Add/Edit Employee</h1>
+			<h1>Add/Edit Employee { user.name }</h1>
+            <button onClick={() => changeName("Fahad")}>Change Name</button>
 			<form onSubmit={handleSubmit(ehsan)}>
 				{/* email */}
 				<div className="row mb-3">

@@ -1,7 +1,7 @@
 import { Link, Outlet } from "react-router-dom";
 import './layout.css';
 
-function Layout() {
+function TeacherLayout() {
     return (
         <div className="layout">
             <div className="navigation">
@@ -25,10 +25,10 @@ function Layout() {
             </div>
 
             <footer>
-                I'm footer section from Layout Component
+                I'm footer section from TeacherLayout Component
             </footer>
         </div>
     )
 }   
 
-export default Layout;
+export default TeacherLayout;

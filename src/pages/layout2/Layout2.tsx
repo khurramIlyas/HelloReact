@@ -1,9 +1,9 @@
 import { Link, Outlet } from "react-router-dom";
 import './layout2.css';
 
-function Layout2() {
+function StudentLayout() {
     return (
-        <div className="layout2">
+        <div className="StudentLayout">
             <div className="navigation">
                 <h2>My Navigation</h2>
                 <ul>
@@ -34,4 +34,4 @@ function Layout2() {
     )
 }   
 
-export default Layout2;
+export default StudentLayout;

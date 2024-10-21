@@ -1,8 +1,12 @@
 
 import axios, {isCancel, AxiosError} from 'axios';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { globalContext } from '../../Contexts';
 
 function Home () {
+    const { user} = useContext(globalContext);
+
+
     const backendBaseUrl = 'https://reqres.in/';
     const [users, setUsers] = useState([]);
 
@@ -43,7 +47,7 @@ function Home () {
 
     return (
         <div>
-            <h4>Home Component - Users</h4>
+            <h4>Home Component - Users { user.name }</h4>
             <div className="btn btn-primary" onClick={creatUser}>Create User</div>
             <div className="btn btn-primary" onClick={updateUser}>Update User</div>
             <ul>
